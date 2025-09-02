@@ -18,12 +18,10 @@ function App() {
       <h1>{props.title}</h1>
     )
   }
-  const Content = (props) =>{
+  const Part = (props) =>{
     return(
       <div>
-        <p>{props.content[0].name} {props.content[0].ex}</p>
-        <p>{props.content[1].name} {props.content[1].ex}</p>
-        <p>{props.content[2].name} {props.content[2].ex}</p>
+        <p>{props.content.name} {props.content.ex}</p>
       </div>
     )
   }
@@ -38,7 +36,9 @@ function App() {
   return (
     <>
       <Course title={course}/>
-      <Content content={content} />
+      <Part content={content[0]} />
+      <Part content={content[1]} />
+      <Part content={content[2]} />
       <Total content={content}/>
     </>
   )
