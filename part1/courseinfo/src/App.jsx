@@ -24,24 +24,24 @@ function App() {
   const Part = (props) =>{
     return(
       <div>
-        <p>{props.content.name} {props.content.exercises}</p>
+        <p>{props.content[0].name} {props.content[0].exercises}</p>
+        <p>{props.content[1].name} {props.content[1].exercises}</p>
+        <p>{props.content[2].name} {props.content[2].exercises}</p>
       </div>
     )
   }
 
   const Total = (props) =>{
     return(
-       <p>Number of exercises {props.p1.exercises + props.p2.exercises + props.p3.exercises}</p>
+       <p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>
     )
       
   }
   return (
     <>
       <Course title={course}/>
-      <Part content={parts[0]} />
-      <Part content={parts[1]} />
-      <Part content={parts[2]} />
-      <Total p1={parts[0]} p2={parts[1]} p3={parts[2]}/>
+      <Part content={parts} />
+      <Total parts={parts}/>
     </>
   )
 }
